@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зимняя Москва - Места</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="snow" id="snow"></div>
+
+    <div class="nav-container">
+        <nav>
+            <a href="index.html" class="logo">Зимняя Москва</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="places.html">Места</a></li>
+                <li><a href="events.html">События</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="main-content">
+        <section class="section">
+            <h2>Лучшие зимние места Москвы</h2>
+            
+            <div class="cards">
+                <div class="card">
+                    <h3>Красная площадь</h3>
+                    <p>Главный каток страны, ГУМ с его знаменитой иллюминацией и историческая архитектура создают волшебную атмосферу.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Парк Горького</h3>
+                    <p>Огромный каток, ледовые скульптуры и уютные кафе делают этот парк одним из самых популярных зимних мест.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>ВДНХ</h3>
+                    <p>Крупнейший каток в Европе, ледовый городок и павильоны в зимнем убранстве - настоящая зимняя сказка.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Царицыно</h3>
+                    <p>Дворцово-парковый ансамбль, покрытый снегом, создает ощущение настоящей русской зимы из сказок.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Арбат</h3>
+                    <p>Старинная улица с ее особой атмосферой, уличными музыкантами и сугробами создает романтическое настроение.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Сокольники</h3>
+                    <p>Лесопарк, превращающийся зимой в рай для любителей лыжных прогулок и зимних пикников.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Галерея зимней Москвы</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Красная площадь зимой">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1573662766191-066ba9570d3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Парк Горького">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1547448411-0b69d6a27485?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="ВДНХ зимой">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1573661888434-12c8940071c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Царицыно">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Зимняя Москва. Все права защищены.</p>
+    </footer>
+
+    <script>
+        function createSnow() {
+            const snowContainer = document.getElementById('snow');
+            const snowflakes = ['❄', '❅', '❆'];
+            
+            for (let i = 0; i < 50; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                snowflake.style.animationDelay = Math.random() * 5 + 's';
+                snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+                snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                snowContainer.appendChild(snowflake);
+            }
+        }
+
+        createSnow();
+    </script>
+</body>
+</html>
